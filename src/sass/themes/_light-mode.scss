@@ -1,0 +1,103 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.light-mode {
+  .navbar {
+    @include navbar-style($clr_Neutral-100, $clr_Neutral-900);
+
+    &__logo {
+      @include logo-style();
+    }
+
+    &__logo {
+      @include logo-text-style();
+    }
+
+    &__button {
+      @include logo-button-style();
+    }
+  }
+
+  .filter-container {
+    @include filter-container-style(column, 450px);
+
+    &__content {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    &__content-button {
+      @include content-button-style($clr_Neutral-100);
+
+      &:hover {
+        @include hover-style($clr_Red-500);
+      }
+
+      &.active {
+        @include active-style($clr_Red-400, $clr_Neutral-900);
+      }
+    }
+  }
+
+  .extension-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
+    place-content: center;
+    gap: 1rem;
+
+    &__card {
+      @include card-style($clr_Neutral-100, $clr_Neutral-900);
+    }
+
+    /* === HEADER😄 === */
+
+    &__card-header {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    &__card-header-title {
+      font-size: 1.25rem;
+      font-weight: $fw-700;
+    }
+
+    &__card-header-text {
+      color: $clr_Neutral-900;
+    }
+
+    /* === HEADER😄 === */
+
+    /* === FOOTER👣 === */
+
+    &__card-footer {
+      @include card-footer-style();
+    }
+
+    &__card-footer-button {
+      @include card-footer-button-style($clr_Neutral-300, $clr_Neutral-900);
+
+      &:focus {
+        @include focus-style($clr_Red-400);
+      }
+      font-weight: $fw-500;
+    }
+
+    &__card-footer-switcher {
+      @include card-footer-switcher-style($clr_Neutral-700, 450px);
+
+      &:focus {
+        @include focus-style($clr_Red-400);
+      }
+
+      .circle {
+        @include circle-style();
+      }
+
+      &.active {
+        @include active-style($clr_Red-400, $clr_Neutral-100);
+      }
+    }
+
+    /* === FOOTER👣 === */
+  }
+}

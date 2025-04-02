@@ -1,0 +1,359 @@
+@charset "UTF-8";
+/* === RESET === */
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.app {
+  padding: 1.5rem;
+  font-family: "Noto Sans", sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+.app.light-mode {
+  background: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  color: hsl(227, 75%, 14%);
+}
+.app.dark-mode {
+  background: linear-gradient(180deg, #040918 0%, #091540 100%);
+  color: hsl(200, 60%, 99%);
+}
+
+.light-mode .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: hsl(0, 0%, 93%);
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 5px hsl(227, 75%, 14%);
+}
+.light-mode .navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.light-mode .navbar__logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.light-mode .navbar__button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.light-mode .filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem auto;
+}
+@media (max-width: 450px) {
+  .light-mode .filter-container {
+    flex-direction: column;
+  }
+}
+.light-mode .filter-container__content {
+  display: flex;
+  gap: 0.5rem;
+}
+.light-mode .filter-container__content-button {
+  font-weight: 500;
+  background-color: hsl(0, 0%, 93%);
+  padding: 0.5rem 1.5rem;
+  border: 1px solid hsl(226, 11%, 37%);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.light-mode .filter-container__content-button:hover {
+  background-color: hsl(3, 71%, 56%);
+}
+.light-mode .filter-container__content-button.active {
+  background-color: hsl(3, 86%, 64%);
+  color: hsl(227, 75%, 14%);
+}
+.light-mode .extension-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
+  place-content: center;
+  gap: 1rem;
+  /* === HEADER😄 === */
+  /* === HEADER😄 === */
+  /* === FOOTER👣 === */
+  /* === FOOTER👣 === */
+}
+.light-mode .extension-container__card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 0 5px hsl(227, 75%, 14%);
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: hsl(0, 0%, 93%);
+}
+.light-mode .extension-container__card-header {
+  display: flex;
+  gap: 0.5rem;
+}
+.light-mode .extension-container__card-header-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.light-mode .extension-container__card-header-text {
+  color: hsl(227, 75%, 14%);
+}
+.light-mode .extension-container__card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+.light-mode .extension-container__card-footer-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid hsl(226, 11%, 37%);
+  border-radius: 30px;
+  background-color: hsl(0, 0%, 78%);
+  color: hsl(227, 75%, 14%);
+  cursor: pointer;
+  font-weight: 500;
+}
+.light-mode .extension-container__card-footer-button:focus {
+  outline: 2px solid hsl(3, 86%, 64%);
+}
+.light-mode .extension-container__card-footer-switcher {
+  display: flex;
+  justify-content: start;
+  background-color: hsl(225, 23%, 24%);
+  border: 1px solid hsl(226, 11%, 37%);
+  border-radius: 30px;
+  width: 15%;
+  padding: 0.1rem;
+  cursor: pointer;
+}
+@media (max-width: 450px) {
+  .light-mode .extension-container__card-footer-switcher {
+    width: 20%;
+  }
+}
+.light-mode .extension-container__card-footer-switcher:focus {
+  outline: 2px solid hsl(3, 86%, 64%);
+}
+.light-mode .extension-container__card-footer-switcher .circle {
+  width: 20px;
+  height: 20px;
+  background-color: hsl(200, 60%, 99%);
+  border: none;
+  border-radius: 50%;
+}
+.light-mode .extension-container__card-footer-switcher.active {
+  background-color: hsl(3, 86%, 64%);
+  color: hsl(0, 0%, 93%);
+}
+
+.dark-mode .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: hsl(226, 25%, 17%);
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 5px hsl(227, 75%, 14%);
+}
+.dark-mode .navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.dark-mode .navbar__logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.dark-mode .navbar__button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.dark-mode .filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem auto;
+}
+@media (max-width: 450px) {
+  .dark-mode .filter-container {
+    flex-direction: column;
+  }
+}
+.dark-mode .filter-container__content {
+  display: flex;
+  gap: 0.5rem;
+}
+.dark-mode .filter-container__content-button {
+  font-weight: 500;
+  background-color: hsl(226, 25%, 17%);
+  padding: 0.5rem 1.5rem;
+  border: 1px solid hsl(226, 11%, 37%);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.dark-mode .filter-container__content-button:focus {
+  outline: 2px solid hsl(3, 86%, 64%);
+}
+.dark-mode .filter-container__content-button:hover {
+  background-color: hsl(3, 71%, 56%);
+}
+.dark-mode .filter-container__content-button.active {
+  background-color: hsl(3, 86%, 64%);
+  color: hsl(227, 75%, 14%);
+}
+.dark-mode .extension-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
+  place-content: center;
+  gap: 1rem;
+  /* === HEADER😄 === */
+  /* === HEADER😄 === */
+  /* === FOOTER👣 === */
+  /* === FOOTER👣 === */
+}
+.dark-mode .extension-container__card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 0 5px hsl(227, 75%, 14%);
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: hsl(225, 23%, 24%);
+}
+.dark-mode .extension-container__card-header {
+  display: flex;
+  gap: 0.5rem;
+}
+.dark-mode .extension-container__card-header-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.dark-mode .extension-container__card-header-text {
+  color: hsl(0, 0%, 78%);
+}
+.dark-mode .extension-container__card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+.dark-mode .extension-container__card-footer-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid hsl(226, 11%, 37%);
+  border-radius: 30px;
+  background-color: hsl(227, 75%, 14%);
+  color: hsl(0, 0%, 93%);
+  cursor: pointer;
+}
+.dark-mode .extension-container__card-footer-button:focus {
+  outline: 2px solid hsl(3, 86%, 64%);
+}
+.dark-mode .extension-container__card-footer-switcher {
+  display: flex;
+  justify-content: start;
+  background-color: hsl(225, 23%, 24%);
+  border: 1px solid hsl(226, 11%, 37%);
+  border-radius: 30px;
+  width: 15%;
+  padding: 0.1rem;
+  cursor: pointer;
+}
+@media (max-width: 450px) {
+  .dark-mode .extension-container__card-footer-switcher {
+    width: 20%;
+  }
+}
+.dark-mode .extension-container__card-footer-switcher:focus {
+  outline: 2px solid hsl(3, 86%, 64%);
+}
+.dark-mode .extension-container__card-footer-switcher .circle {
+  width: 20px;
+  height: 20px;
+  background-color: hsl(200, 60%, 99%);
+  border: none;
+  border-radius: 50%;
+}
+.dark-mode .extension-container__card-footer-switcher.active {
+  background-color: hsl(3, 86%, 64%);
+  color: hsl(0, 0%, 93%);
+}/*# sourceMappingURL=style.css.map */

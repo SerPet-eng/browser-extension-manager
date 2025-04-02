@@ -1,0 +1,16 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.app {
+  padding: 1.5rem;
+  font-family: $ff-NotoSan;
+  transition: all 0.3s ease-in-out;
+
+  &.light-mode {
+    @include bg-txt-theme($clr_Light-Gradient, $clr_Neutral-900);
+  }
+
+  &.dark-mode {
+    @include bg-txt-theme($clr_Dark-Gradient, $clr_Neutral-0);
+  }
+}
