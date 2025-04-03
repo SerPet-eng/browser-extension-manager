@@ -39,7 +39,7 @@ export const extensions = [
     isActive: false,
   },
   {
-    logo: '.https://res.cloudinary.com/dhvpcbfat/image/upload/v1743646309/logo-markup-notes_l8nrde.svg',
+    logo: 'https://res.cloudinary.com/dhvpcbfat/image/upload/v1743646309/logo-markup-notes_l8nrde.svg',
     name: 'Markup Notes',
     description:
       'Enables annotation and notes directly onto webpages for collaborative debugging.',
