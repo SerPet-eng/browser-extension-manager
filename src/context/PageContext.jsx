@@ -7,6 +7,7 @@ import {
   useMemo,
 } from 'react';
 import { reducer, initialState, ACTIONS } from '../utils/Reducer';
+import { extensions } from '../../public/data';
 
 const PageContext = createContext(null);
 
@@ -20,10 +21,9 @@ export default function PageProvider({ children }) {
 
   // Fetch Data 🫙🦴
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = () => {
       try {
-        const response = await fetch('/public/data.json'); // ✅ Fixed path
-        const data = await response.json();
+        const data = extensions;
         dispatch({ type: ACTIONS.SET_EXTENSIONS, payload: data });
       } catch (error) {
         console.error(error);
