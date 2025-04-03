@@ -96,7 +96,7 @@
       }
 
       &.active {
-        @include active-style($clr_Red-400, $clr_Neutral-100);
+        @include circle-active-style($clr_Red-400);
       }
     }
 

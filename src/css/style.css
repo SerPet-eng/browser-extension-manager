@@ -220,7 +220,7 @@ h6 {
 }
 .light-mode .extension-container__card-footer-switcher.active {
   background-color: hsl(3, 86%, 64%);
-  color: hsl(0, 0%, 93%);
+  justify-content: end;
 }
 
 .dark-mode .navbar {
@@ -355,5 +355,5 @@ h6 {
 }
 .dark-mode .extension-container__card-footer-switcher.active {
   background-color: hsl(3, 86%, 64%);
-  color: hsl(0, 0%, 93%);
+  justify-content: end;
 }/*# sourceMappingURL=style.css.map */
